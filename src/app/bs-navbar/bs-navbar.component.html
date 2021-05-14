@@ -1,0 +1,26 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Create report</h4>
+    <button type="button" class="btn btn-close"  aria-label="Close" (click)="modal.close('Cross click')">
+    </button>
+  </div>
+
+  <div class="modal-body" style="height: 100%">
+    <app-report></app-report>
+  </div>
+
+  <div class="modal-footer">
+    <li ngbDropdown class="nav-item dropdown navbar-nav">
+      <a ngbDropdownToggle class="btn btn-primary" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"
+         aria-expanded="false">Export</a>
+      <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
+        <a class="dropdown-item" href="#">Save to PDF</a>
+        <a class="dropdown-item" href="#">Save to XLS</a>
+        <a class="dropdown-item" href="#">Print</a>
+      </div>
+    </li>
+    <button type="button" class="btn btn-primary" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>
+
+  <button class="btn btn-primary" style="margin-left: 70%" (click)="open({content : content})">Create report</button>
